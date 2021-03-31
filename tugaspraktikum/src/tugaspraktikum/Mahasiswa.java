@@ -12,15 +12,18 @@ import java.util.Scanner;
  * @author Lenovo ideapad
  */
 public class Mahasiswa {
-    String name;
-    int uts,uas;
-    public Mahasiswa(String name, int uts, int uas) {
+    String name,nim;
+    int uts,uas,usia;
+    public Mahasiswa(String name, int uts, int uas, int usia, String nim) {
         System.out.println("Nama : "+name);
         System.out.println("UTS : "+uts);
         System.out.println("UAS : "+uas);
+        System.out.println("Rata rata : "+ratarata(uts,uas));
+    }
+    double ratarata(int uts, int uas){
         int nilai;
         nilai= (uts+uas)/2;
-
-        System.out.println(nilai);
+        return(nilai);
     }
+
 }

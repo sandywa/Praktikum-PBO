@@ -20,18 +20,22 @@ public class Main {
         System.out.println("Pilih Menu Input:");
         System.out.println("1. Input Data");
         System.out.println("0. Keluar");
-        System.out.println("Pilih : ");
+        System.out.print("Pilih : ");
         Scanner scanner=new Scanner(System.in);
         int pil=scanner.nextInt();
         if (pil==1){
             System.out.println("Input Data Mahasiswa");
-            System.out.println("Masukan Nama Mahasiswa : ");
+            System.out.print("Masukan Nama Mahasiswa : ");
             String name= scanner.next();
-            System.out.println("Masukan Nilai UTS");
+            System.out.print("Masukan NIM : ");
+            String nim=scanner.next();
+            System.out.print("Usia : ");
+            int usia=scanner.nextInt();
+            System.out.print("Masukan Nilai UTS :");
             int uts= scanner.nextInt();
-            System.out.println("Masukan Nilai UAS");
+            System.out.print("Masukan Nilai UAS : ");
             int uas= scanner.nextInt();
-            Mahasiswa datamhs=new Mahasiswa(name,uts,uas);
+            Mahasiswa datamhs=new Mahasiswa(name,uts,uas,usia,nim);
         }
 
     }
