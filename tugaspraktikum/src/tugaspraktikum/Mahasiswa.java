@@ -16,6 +16,8 @@ public class Mahasiswa {
     int uts,uas,usia;
     public Mahasiswa(String name, int uts, int uas, int usia, String nim) {
         System.out.println("Nama : "+name);
+        System.out.println("NIM : "+nim);
+        System.out.println("Usia : "+usia);
         System.out.println("UTS : "+uts);
         System.out.println("UAS : "+uas);
         System.out.println("Rata rata : "+ratarata(uts,uas));
