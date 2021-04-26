@@ -7,7 +7,6 @@
 
 package main;
 
-import bidang.PersegiPanjang;
 import ruang.Balok;
 import ruang.Kerucut;
 
@@ -42,13 +41,12 @@ public class  Main {
                     int lebar=scanner.nextInt();
                     System.out.print("Tinggi : ");
                     int tinggi=scanner.nextInt();
-                    PersegiPanjang persegiPanjang = new PersegiPanjang(panjang,lebar);
-                    Balok balok = new Balok(panjang,lebar,tinggi);
+                    Balok balok =new Balok(panjang,lebar,tinggi);
                     System.out.println("--------Output----------");
-                    System.out.println("Keliling Persegi Panjang : " + persegiPanjang.kelilingPersegiPanjang());
-                    System.out.println("Luas Persegi Panjang : " + persegiPanjang.bidangPersegiPanjang());
-                    System.out.println("Volume Balok : "+ balok.volumeBalok());
-                    System.out.println("Luas Permukaan : "+ balok.luasPermukaanBalok());
+                    System.out.println("Keliling Persegi Panjang : " + balok.hitungKeliling());
+                    System.out.println("Luas Persegi Panjang : " + balok.hitungLuas());
+                    System.out.println("Volume Balok : "+ balok.volume());
+                    System.out.println("Luas Permukaan : "+ balok.luasPermukaan());
                     break;
                 }
                 case 2: {
@@ -59,10 +57,10 @@ public class  Main {
                     int tinggi=scanner.nextInt();
                     Kerucut kerucut = new Kerucut(jari,tinggi);
                     System.out.println("--------Output----------");
-                    System.out.println("Keliling Lingkaran : " + kerucut.kelilingLingkaran(jari));
-                    System.out.println("Luas Persegi Panjang : " + kerucut.luasLingkaran(jari));
-                    System.out.println("Volume Balok : "+ kerucut.volumeKerucut());
-                    System.out.println("Luas Permukaan : "+ kerucut.luasKerucut());
+                    System.out.println("Keliling Lingkaran : " + kerucut.hitungKeliling());
+                    System.out.println("Luas Persegi Panjang : " + kerucut.hitungLuas());
+                    System.out.println("Volume Balok : "+ kerucut.volume());
+                    System.out.println("Luas Permukaan : "+ kerucut.luasPermukaan());
                     break;
                 }
 

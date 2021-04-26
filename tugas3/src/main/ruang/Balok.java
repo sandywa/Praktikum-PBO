@@ -1,23 +1,30 @@
 package ruang;
 
-public class Balok implements MenghitungRuang{
-    int panjang;
-    int lebar;
-    int tinggi;
+import bidang.PersegiPanjang;
+
+public class Balok extends PersegiPanjang implements HitungRuang {
+    private int tinggi;
 
     public Balok(int panjang, int lebar, int tinggi) {
-        this.panjang = panjang;
-        this.lebar = lebar;
+        super(panjang, lebar);//mengarah ke conrtuctor persegi panjang
+        this.tinggi = tinggi;
+    }
+
+    public int getTinggi() {
+        return tinggi;
+    }
+
+    public void setTinggi(int tinggi) {
         this.tinggi = tinggi;
     }
 
     @Override
-    public int volumeBalok() {
-        return panjang*tinggi*lebar;
+    public double volume() {
+        return hitungLuas()*tinggi;
     }
 
     @Override
-    public int luasPermukaanBalok() {
-        return (panjang*lebar)+(panjang*tinggi)+(lebar*tinggi);
+    public double luasPermukaan() {
+        return ((hitungLuas())+(getLebar()*tinggi)+(getPanjang()*tinggi))*2;
     }
 }

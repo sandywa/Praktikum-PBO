@@ -1,29 +1,35 @@
 package ruang;
 import bidang.Lingkaran;
 
-public class Kerucut extends Lingkaran{
-    double jari;
-    double tinggi;
+public class Kerucut extends Lingkaran implements HitungRuang{
+    private double tinggi;
 
     public Kerucut(double jari, double tinggi) {
-        this.jari = jari;
-        this.tinggi=tinggi;
+        super(jari);
+        this.tinggi = tinggi;
+    }
+
+    public double getTinggi() {
+        return tinggi;
+    }
+
+    public void setTinggi(double tinggi) {
+        this.tinggi = tinggi;
+    }
+
+    public double sisiMiring(){
+        double jumlah=getJari()*getJari()+getTinggi()*getTinggi();
+        double s=Math.sqrt((jumlah));
+        return s;
     }
 
     @Override
-    public double luasLingkaran(double jari) {
-        return super.luasLingkaran(jari);
+    public double volume() {
+        return hitungLuas()*tinggi/3;
     }
 
-    public double luasKerucut(){
-        double s;
-        double jumlah;
-        jumlah = (jari*jari)+(tinggi*tinggi);
-        s=Math.pow(jumlah,0.5);
-        return (getPhi()*jari*s)+luasLingkaran(jari);
-    }
-
-    public double volumeKerucut(){
-        return luasLingkaran(jari)*tinggi/3;
+    @Override
+    public double luasPermukaan() {
+        return Math.PI*getJari()*(getJari()+sisiMiring());
     }
 }
